@@ -1,4 +1,5 @@
 import 'package:co2_salinim/components/default_button.dart';
+import 'package:co2_salinim/components/default_floating_action_button.dart';
 import 'package:co2_salinim/components/default_scaffold.dart';
 import 'package:flutter/material.dart';
 

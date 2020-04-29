@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class DefaultDropDownButton extends StatefulWidget {
   final String hintText;
   final List<String> items;
+  final ValueChanged<String> onChanged;
   const DefaultDropDownButton({
     Key key,
     this.hintText,
     this.items,
+    this.onChanged,
   }) : super(key: key);
 
   @override
@@ -30,7 +32,10 @@ class _DefaultDropDownButtonState extends State<DefaultDropDownButton> {
           hint: Text(widget.hintText),
           onChanged: (String newValue) {
             setState(() {
-              dropdownValue = newValue;
+              dropdownValue = newValue; 
+              if(widget.onChanged != null){
+                widget.onChanged(newValue);
+              }
             });
           },
           items: widget.items.map<DropdownMenuItem<String>>((String value) {

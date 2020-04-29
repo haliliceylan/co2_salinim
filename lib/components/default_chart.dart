@@ -30,10 +30,10 @@ class DefaultChart extends StatelessWidget {
   /// Create one series with sample hard coded data.
   static List<charts.Series<LinearSales, int>> _createSampleData() {
     final data = [
-      new LinearSales(0, 100),
-      new LinearSales(1, 75),
-      new LinearSales(2, 25),
-      new LinearSales(3, 5),
+      new LinearSales(0, 150),
+      new LinearSales(1, 170),
+      new LinearSales(2, 190),
+      new LinearSales(3, 210),
     ];
 
     return [
@@ -42,8 +42,7 @@ class DefaultChart extends StatelessWidget {
         domainFn: (LinearSales sales, _) => sales.year,
         measureFn: (LinearSales sales, _) => sales.sales,
         data: data,
-        // Set a label accessor to control the text of the arc label.
-        labelAccessorFn: (LinearSales row, _) => '${row.year}: ${row.sales}',
+        labelAccessorFn: (LinearSales row, _) => '${row.sales}',
       )
     ];
   }

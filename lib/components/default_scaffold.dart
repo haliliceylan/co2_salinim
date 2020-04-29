@@ -10,7 +10,7 @@ class DefaultScaffold extends StatelessWidget {
   const DefaultScaffold({
     Key key,
     this.child,
-    this.buttonType,
+    this.buttonType = DefaultFloationActionButtonType.Chart,
     this.title = "",
   }) : super(key: key);
 

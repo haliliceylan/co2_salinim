@@ -15,16 +15,13 @@ class DefaultFloationActionButton extends StatelessWidget {
       width: 77.0,
       child: FittedBox(
         child: FloatingActionButton(
-          onPressed: () => null,
-          child:  type == DefaultFloationActionButtonType.Chart ? Image.asset(
-           'assets/chart_button.png',
-          ) : Icon(Icons.add),
+          onPressed: () => type == DefaultFloationActionButtonType.Chart ? Navigator.popUntil(context, ModalRoute.withName('/')) : Navigator.pushNamed(context, '/ekle'),
+          child: type == DefaultFloationActionButtonType.Chart ? Image.asset('assets/chart_button.png') : Icon(Icons.add),
           elevation: 0,
         ),
       ),
     );
   }
 }
-enum DefaultFloationActionButtonType{
-  Chart,Add
-}
+
+enum DefaultFloationActionButtonType { Chart, Add }
