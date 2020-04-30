@@ -7,7 +7,7 @@ class AgacScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-      title: "Agaç Girişi",
+      title: "Add Tree",
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 50),
         width: MediaQuery.of(context).size.width,
@@ -21,7 +21,7 @@ class AgacScreen extends StatelessWidget {
             //SizedBox(height: 60),
             DefaultTextFormField(keyboardType: TextInputType.text,labelText: "Ağaç Sayısı"),
             SizedBox(height: 60),
-            DefaultAppButton(text: "Kaydet"),
+            DefaultAppButton(text: "Save"),
           ],
         ),
       ),
