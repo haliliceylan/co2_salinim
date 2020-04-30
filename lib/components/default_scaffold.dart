@@ -19,6 +19,7 @@ class DefaultScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(this.title), leading: DefaultBackButton()),
       body: child,
+      resizeToAvoidBottomPadding: false,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: DefaultFloationActionButton(type: buttonType),
       bottomNavigationBar: DefaultBottomAppNavigationBar(),

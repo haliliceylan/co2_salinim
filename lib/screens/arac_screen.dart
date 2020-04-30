@@ -27,7 +27,7 @@ class _AracScreenState extends State<AracScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-      title: "Araç Girişi",
+      title: "Add Car",
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 50),
         width: MediaQuery.of(context).size.width,
@@ -40,14 +40,14 @@ class _AracScreenState extends State<AracScreen> {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               DefaultDropDownButton(
-                hintText: "Yakıt Türü",
+                hintText: "Fuel Type",
                 items: userData.aracDataTypeDetailValues.keys.toList(),
                 onChanged: (dynamic str) => this.setState(() => yakit_turu = str),
               ),
               SizedBox(height: 60),
               DefaultTextFormField(
                   keyboardType: TextInputType.text,
-                  labelText: "Araç İsmi",
+                  labelText: "Entry Name",
                   onChanged: (String str) {
                     setState(() {
                       arac_ismi = str;
@@ -56,8 +56,8 @@ class _AracScreenState extends State<AracScreen> {
               SizedBox(height: 60),
               DefaultTextFormField(
                   keyboardType: TextInputType.number,
-                  labelText: "Kat Edilen Mesafe",
-                  helperText: "Km cinsinden giriniz",
+                  labelText: "Distance Traveled",
+                  helperText: "Please insert in km",
                   suffixText: "KM",
                   onChanged: (String str) {
                     setState(() {
@@ -66,7 +66,7 @@ class _AracScreenState extends State<AracScreen> {
                   }),
               SizedBox(height: 40),
               DefaultAppButton(
-                  text: "Kaydet",
+                  text: "Save",
                   onTap: () {
                     userData.addUserData(DataModel(
                       title: this.arac_ismi,

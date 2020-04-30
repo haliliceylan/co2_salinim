@@ -7,7 +7,7 @@ class EkleScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-      title: "Ekle",
+      title: "Add New Entry",
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 50),
         width: MediaQuery.of(context).size.width,
@@ -16,11 +16,11 @@ class EkleScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             SizedBox(height: 100),
-            DefaultButton(title: "Araç Girişi", assetUrl: "assets/car_button.png", routeName: "/arac-girisi"),
+            DefaultButton(title: "Add Car", assetUrl: "assets/car_button.png", routeName: "/arac-girisi"),
             SizedBox(height: 60),
-            DefaultButton(title: "Yakıt Girişi", assetUrl: "assets/fire_button.png", routeName: "/yakit-girisi"),
+            DefaultButton(title: "Add Building", assetUrl: "assets/fire_button.png", routeName: "/yakit-girisi"),
             SizedBox(height: 60),
-            DefaultButton(title: "Ağaç Girişi", assetUrl: "assets/tree_button.png", routeName: "/agac-girisi"),
+            DefaultButton(title: "Add Tree", assetUrl: "assets/tree_button.png", routeName: "/agac-girisi"),
           ],
         ),
       ),

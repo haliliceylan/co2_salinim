@@ -11,7 +11,7 @@ class DefaultBottomAppNavigationBar extends StatelessWidget {
         shape: CircularNotchedRectangle(),
         color: Theme.of(context).primaryColor,
         child: Container(
-          height: 40,
+          height: 60,
         ));
   }
 }

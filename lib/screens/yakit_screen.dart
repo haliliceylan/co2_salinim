@@ -26,7 +26,7 @@ class _YakitScreenState extends State<YakitScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-      title: "Yakıt Girişi",
+      title: "Add Fuel",
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 50),
         width: MediaQuery.of(context).size.width,
@@ -38,24 +38,24 @@ class _YakitScreenState extends State<YakitScreen> {
           children: <Widget>[
             DefaultTextFormField(
               keyboardType: TextInputType.text,
-              labelText: "Kaynağın Adı",
+              labelText: "Entry Name",
               onChanged: (String str) => setState(() => yakitIsmi = str),
             ),
             SizedBox(height: 60),
             DefaultDropDownButton(
-              hintText: "Yakıt Türü",
+              hintText: "Fuel Type",
               items: userData.yakitDataTypeDetailValues.keys.toList(),
               onChanged: (dynamic str) => this.setState(() => yakitTuru = str),
             ),
             SizedBox(height: 60),
             DefaultTextFormField(
-              keyboardType: TextInputType.text,
-              labelText: "Tüketilen Yakıt Miktarı",
+              keyboardType: TextInputType.number,
+              labelText: "Amount of Fuel Used",
               onChanged: (String str) => setState(() => tuketilenYakit = str),
             ),
             SizedBox(height: 60),
             DefaultAppButton(
-              text: "Kaydet",
+              text: "Save",
               onTap: () {
                 userData.addUserData(DataModel(
                   title: this.yakitIsmi,

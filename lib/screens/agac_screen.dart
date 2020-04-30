@@ -24,7 +24,7 @@ class _AgacScreenState extends State<AgacScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultScaffold(
-      title: "Agaç Girişi",
+      title: "Add Tree",
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 50),
         width: MediaQuery.of(context).size.width,
@@ -35,12 +35,12 @@ class _AgacScreenState extends State<AgacScreen> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             //DefaultDropDownButton(hintText: "Yakıt Türü", items: ["Doğalgaz", "Kömür", "Elektrik"]),
-            DefaultTextFormField(keyboardType: TextInputType.text, labelText: "Ağaç İsmi", onChanged: (String str) => setState(() => agacIsmi = str)),
+            DefaultTextFormField(keyboardType: TextInputType.text, labelText: "Entry Name", onChanged: (String str) => setState(() => agacIsmi = str)),
             SizedBox(height: 60),
-            DefaultTextFormField(keyboardType: TextInputType.text, labelText: "Ağaç Sayısı", onChanged: (str) => this.setState(() => agacSayisi = str)),
+            DefaultTextFormField(keyboardType: TextInputType.text, labelText: "Tree Count", onChanged: (str) => this.setState(() => agacSayisi = str)),
             SizedBox(height: 60),
             DefaultAppButton(
-              text: "Kaydet",
+              text: "Save",
               onTap: () {
                 userData.addUserData(DataModel(
                   title: this.agacIsmi,
