@@ -15,9 +15,9 @@ for run this project you need ios or android device(can be emulator). After conn
 
 some screenshots from our projects
 
-![flutter_01.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_01.png?raw=true)
-![flutter_02.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_02.png?raw=true)
-![flutter_03.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_03.png?raw=true)
-![flutter_04.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_04.png?raw=true)
-![flutter_05.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_05.png?raw=true)
-![flutter_06.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_06.png?raw=true)
+![flutter_01.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_01.png?raw=true){:width="40%"}
+![flutter_02.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_02.png?raw=true){:width="40%"}
+![flutter_03.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_03.png?raw=true){:width="40%"}
+![flutter_04.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_04.png?raw=true){:width="40%"}
+![flutter_05.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_05.png?raw=true){:width="40%"}
+![flutter_06.png](https://github.com/haliliceylan/co2_salinim/blob/master/flutter_06.png?raw=true){:width="40%"}
