@@ -19,11 +19,11 @@ RUN flutter upgrade
 RUN flutter config --enable-web
 
 # Copy files to container and build
-RUN mkdir /usr/local/<name>
-COPY . /usr/local/<name>
-WORKDIR /usr/local/<name>
+RUN mkdir /usr/local/co2_salinim
+COPY . /usr/local/co2_salinim
+WORKDIR /usr/local/co2_salinim
 RUN /usr/local/flutter/bin/flutter build web
 
 # Stage 2 - Create the run-time image
 FROM nginx
-COPY --from=build-env /usr/local/<name>/build/web /usr/share/nginx/html
+COPY --from=build-env /usr/local/co2_salinim/build/web /usr/share/nginx/html
