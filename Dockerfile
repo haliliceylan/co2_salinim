@@ -17,6 +17,7 @@ ENV PATH="/usr/local/flutter/bin:/usr/local/flutter/bin/cache/dart-sdk/bin:${PAT
 RUN flutter channel master
 RUN flutter upgrade
 RUN flutter config --enable-web
+RUN flutter create .
 
 # Copy files to container and build
 RUN mkdir /usr/local/co2_salinim
