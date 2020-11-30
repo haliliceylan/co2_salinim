@@ -35,9 +35,15 @@ class _AgacScreenState extends State<AgacScreen> {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             //DefaultDropDownButton(hintText: "Yakıt Türü", items: ["Doğalgaz", "Kömür", "Elektrik"]),
-            DefaultTextFormField(keyboardType: TextInputType.text, labelText: "Entry Name", onChanged: (String str) => setState(() => agacIsmi = str)),
+            DefaultTextFormField(
+                keyboardType: TextInputType.text,
+                labelText: "Entry Name",
+                onChanged: (String str) => setState(() => agacIsmi = str)),
             SizedBox(height: 60),
-            DefaultTextFormField(keyboardType: TextInputType.text, labelText: "Tree Count", onChanged: (str) => this.setState(() => agacSayisi = str)),
+            DefaultTextFormField(
+                keyboardType: TextInputType.number,
+                labelText: "Tree Count",
+                onChanged: (str) => this.setState(() => agacSayisi = str)),
             SizedBox(height: 60),
             DefaultAppButton(
               text: "Save",

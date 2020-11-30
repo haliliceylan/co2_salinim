@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class ChartScreen extends StatelessWidget {
-  final ValueNotifier<chartTab> currentChart = ValueNotifier<chartTab>(chartTab.dataType);
-
+  final ValueNotifier<chartTab> currentChart =
+      ValueNotifier<chartTab>(chartTab.dataType);
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +33,21 @@ class ChartScreen extends StatelessWidget {
                     : Stack(children: <Widget>[
                         SizedBox(height: 200),
                         ValueListenableBuilder(
-                          builder: (BuildContext context, chartTab value, Widget _) {
+                          builder:
+                              (BuildContext context, chartTab value, Widget _) {
                             Widget currentWidget;
                             switch (value) {
                               case chartTab.dataType:
-                                currentWidget = DefaultChart(userData.dataTypeChart(themeDat));
+                                currentWidget = DefaultChart(
+                                    userData.dataTypeChart(themeDat));
                                 break;
                               case chartTab.dataTypeDetail:
-                                currentWidget = DefaultChart(userData.dataTypeDetailChart(themeDat));
+                                currentWidget = DefaultChart(
+                                    userData.dataTypeDetailChart(themeDat));
                                 break;
                               case chartTab.polluiton:
-                                currentWidget = DefaultChart(userData.pollutionChart(themeDat));
+                                currentWidget = DefaultChart(
+                                    userData.pollutionChart(themeDat));
                                 break;
                             }
                             return currentWidget;
@@ -70,7 +74,9 @@ class ChartScreen extends StatelessWidget {
                             },
                             child: Container(
                               padding: EdgeInsets.all(4),
-                              decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(10)),
+                              decoration: BoxDecoration(
+                                  color: Colors.grey,
+                                  borderRadius: BorderRadius.circular(10)),
                               child: Icon(Icons.cached, size: 25),
                             ),
                           ),
@@ -101,7 +107,9 @@ class ChartScreen extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     //shrinkWrap: true,
-                    children: userData.getUserDatas.map((DataModel d) => DataRow(dataModel: d)).toList(),
+                    children: userData.getUserDatas
+                        .map((DataModel d) => DataRow(dataModel: d))
+                        .toList(),
                   ),
                 ),
               )
@@ -132,13 +140,16 @@ class DataRow extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Container(
-                color:  dataModel.dataType == DataType.Tree ? Colors.green : Colors.grey,
+                color: dataModel.dataType == DataType.Tree
+                    ? Colors.green
+                    : Colors.grey,
               ),
             ),
           ),
-          Expanded(child: Text(dataModel.title ?? ""))
-          ,
-          Text("${dataModel.dataType == DataType.Tree ? "-" : ""} ${dataModel.getCalculatedValue.toStringAsFixed(2)} KG CO2",textAlign: TextAlign.right),
+          Expanded(child: Text(dataModel.title ?? "")),
+          Text(
+              "${dataModel.dataType == DataType.Tree ? "-" : ""} ${dataModel.getCalculatedValue.toStringAsFixed(2)} KG CO2",
+              textAlign: TextAlign.right),
           SizedBox(width: 20)
         ],
       ),
