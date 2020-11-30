@@ -4,7 +4,6 @@ import 'package:co2_salinim/screens/chart_screen.dart';
 import 'package:co2_salinim/screens/ekle_screen.dart';
 import 'package:co2_salinim/screens/yakit_screen.dart';
 import 'package:co2_salinim/user_data.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,8 +15,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Arial',
         primaryColor: Color(0xFF707070),
         buttonColor: Colors.white,
-        floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Color(0xFF707070)),
-        textTheme: TextTheme(subhead: TextStyle(fontSize: 23), button: TextStyle(fontSize: 20)),
+        floatingActionButtonTheme:
+            FloatingActionButtonThemeData(backgroundColor: Color(0xFF707070)),
+        textTheme: TextTheme(
+            subhead: TextStyle(fontSize: 23), button: TextStyle(fontSize: 20)),
       ),
       dataTypeColors: {
         DataType.Build: Colors.grey.shade100,
@@ -43,8 +44,10 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Arial',
         primaryColor: Color(0xFF8BC34A),
         buttonColor: Color(0xFFFF9800),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(backgroundColor: Color(0xFFFF9800)),
-        textTheme: TextTheme(subhead: TextStyle(fontSize: 23), button: TextStyle(fontSize: 20)),
+        floatingActionButtonTheme:
+            FloatingActionButtonThemeData(backgroundColor: Color(0xFFFF9800)),
+        textTheme: TextTheme(
+            subhead: TextStyle(fontSize: 23), button: TextStyle(fontSize: 20)),
       ),
       dataTypeColors: {
         DataType.Build: Colors.grey.shade100,
@@ -67,10 +70,14 @@ class MyApp extends StatelessWidget {
 
   ThemeDat calculateCurrentTheme(UserData userData) {
     var x = userData.emilimHesapla();
-    if(x.containsKey(SalinimType.Salinim) && !x.containsKey(SalinimType.Emilim)) return blackTheme;
-    if(!x.containsKey(SalinimType.Salinim) && x.containsKey(SalinimType.Emilim)) return greenTheme;
+    if (x.containsKey(SalinimType.Salinim) &&
+        !x.containsKey(SalinimType.Emilim)) return blackTheme;
+    if (!x.containsKey(SalinimType.Salinim) &&
+        x.containsKey(SalinimType.Emilim)) return greenTheme;
     if (x.keys.length < 2) return greenTheme;
-    return x[SalinimType.Salinim] - x[SalinimType.Emilim] > 0 ? blackTheme : greenTheme;
+    return x[SalinimType.Salinim] - x[SalinimType.Emilim] > 0
+        ? blackTheme
+        : greenTheme;
   }
 
   // This widget is the root of your application.
@@ -78,8 +85,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<UserData>(create: (BuildContext context) => UserData()),
-        ProxyProvider<UserData, ThemeDat>(update: (BuildContext _, UserData userData, __) => calculateCurrentTheme(userData))
+        ChangeNotifierProvider<UserData>(
+            create: (BuildContext context) => UserData()),
+        ProxyProvider<UserData, ThemeDat>(
+            update: (BuildContext _, UserData userData, __) =>
+                calculateCurrentTheme(userData))
       ],
       child: Consumer<ThemeDat>(
         builder: (BuildContext context, ThemeDat themeData, _) => MaterialApp(
@@ -103,5 +113,9 @@ class ThemeDat {
   final Map<DataType, Color> dataTypeColors;
   final Map<DataTypeDetail, Color> dataTypeDetailColors;
   final Map<SalinimType, Color> salinimTypeColors;
-  ThemeDat({this.themeData, this.dataTypeColors, this.dataTypeDetailColors, this.salinimTypeColors});
+  ThemeDat(
+      {this.themeData,
+      this.dataTypeColors,
+      this.dataTypeDetailColors,
+      this.salinimTypeColors});
 }

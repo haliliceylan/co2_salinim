@@ -41,19 +41,19 @@ class _YakitScreenState extends State<YakitScreen> {
               labelText: "Entry Name",
               onChanged: (String str) => setState(() => yakitIsmi = str),
             ),
-            SizedBox(height: 60),
+            SizedBox(height: 40),
             DefaultDropDownButton(
               hintText: "Fuel Type",
               items: userData.yakitDataTypeDetailValues.keys.toList(),
               onChanged: (dynamic str) => this.setState(() => yakitTuru = str),
             ),
-            SizedBox(height: 60),
+            SizedBox(height: 40),
             DefaultTextFormField(
               keyboardType: TextInputType.number,
               labelText: "Amount of Fuel Used",
               onChanged: (String str) => setState(() => tuketilenYakit = str),
             ),
-            SizedBox(height: 60),
+            SizedBox(height: 40),
             DefaultAppButton(
               text: "Save",
               onTap: () {

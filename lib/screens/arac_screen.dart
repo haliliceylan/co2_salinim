@@ -42,9 +42,10 @@ class _AracScreenState extends State<AracScreen> {
               DefaultDropDownButton(
                 hintText: "Fuel Type",
                 items: userData.aracDataTypeDetailValues.keys.toList(),
-                onChanged: (dynamic str) => this.setState(() => yakit_turu = str),
+                onChanged: (dynamic str) =>
+                    this.setState(() => yakit_turu = str),
               ),
-              SizedBox(height: 60),
+              SizedBox(height: 40),
               DefaultTextFormField(
                   keyboardType: TextInputType.text,
                   labelText: "Entry Name",
@@ -53,7 +54,7 @@ class _AracScreenState extends State<AracScreen> {
                       arac_ismi = str;
                     });
                   }),
-              SizedBox(height: 60),
+              SizedBox(height: 40),
               DefaultTextFormField(
                   keyboardType: TextInputType.number,
                   labelText: "Distance Traveled",
@@ -71,8 +72,10 @@ class _AracScreenState extends State<AracScreen> {
                     userData.addUserData(DataModel(
                       title: this.arac_ismi,
                       dataType: DataType.Car,
-                      dataTypeDetail: userData.aracDataTypeDetailValues[yakit_turu],
-                      value: int.parse(this.kat_edilen_mesafe), // calculate here
+                      dataTypeDetail:
+                          userData.aracDataTypeDetailValues[yakit_turu],
+                      value:
+                          int.parse(this.kat_edilen_mesafe), // calculate here
                     ));
                     Navigator.popUntil(context, ModalRoute.withName('/ekle'));
                   }),
